@@ -9,7 +9,7 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
-
+\usepackage{csquotes}
 \usepackage{cite}
 %\usepackage{times}
 
@@ -32,22 +32,43 @@
 \maketitle
 
 \begin{abstract}
-\ldots
+Go je dosková hra pochádzajúca zo starovekej Číny. S rozvojom techniky sa preniesla aj do počítačov.
+Existuje obrovské množstvo mobilných aplikácií, počítačových programov a stránok, kde je materiál o tejto hre, kde sa môžete hrať s počítačom alebo ľuďmi, sledovať, ako hrajú ostatní, a získavať skúsnosti.
+Účelom článku je vysvetliť, čo táto hra učí, ako ju hrať, aké zručnosti rozvíja, stručne povedať jej niekoľko tisícročí vývoja, aké stránky, programy či aplikácie sú pre túto hru najvhodnejšie.
 \end{abstract}
 
 
 
 \section{Úvod}
 
-Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
+Počítačový Go program AlphaGo od DeepMind vyhral zápas proti jednému z najlepších svetových hráčov Lee Sedolovi z Kórey. Víťazstvo prišlo oveľa skôr, než ktokoľvek očakával, a prekvapilo mnohých v oblasti AI. Nolan Bushnell, zakladateľ Atari a sám Go Guru, bol tak ohromený počinom AlphaGo: \enquote{Go je najdôležitejšia hra v mojom živote. Je to jediná hra, ktorá skutočne vyvažuje ľavú a pravú stranu mozgu.  Skutočnosť, že teraz ustúpila počítačovej technológii, je nesmierne dôležitá}. Porážka nad ľudstvom strojom tiež vyvolala obrovský záujem verejnosti o technológiu AI na celom svete, najmä v Číne, Kórei, USA a Spojenom kráľovstve. Pre mnohých ľudí má IT od tohto momentu nový význam: neznamená to len informačné technológie alebo priemyselné technológie, teraz sú to inteligentné technológie a prichádza vek nových IT.[2]
+\textquote{Myslel som, že AlphaGo je založený na výpočte pravdepodobnosti a že je to iba stroj. Ale keď som videl tento krok, zmenil som názor. AlphaGo je určite kreatívny}, povedal sám odporca tohto počítačového programu, víťaz 18 svetových titulov Go. https://www.deepmind.com/research/highlighted-research/alphago[2]
 
-Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
-Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
-Záverečné poznámky prináša časť~\ref{zaver}.
+Prečo víťazstvo počítača nad človekom v tejto hre tak mnohých prekvapilo?
+
+Myslím si, že dôvodom je to, že sme ľudia, myslíme si o sebe, že sme veľmi kreatívni. Totiž v strategickej hre Go sa tieto vlastnosti prejavujú. Prečo a ako táto hra rozvíja kreativitu a v akej forme je najlepšie ju hrať - to sú hlavné otázky tohto článku.
+
+% Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
+%Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
+%Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
+%Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
+%Záverečné poznámky prináša časť~\ref{zaver}.
 
 
+\section{Všeobecné informácie o strategickej hre Go}
+\subsection{História strategickej hry Go}
+Hra je formou zábavy a vzrušenia, ktoré ľudia sledujú od úsvitu ľudskej civilizácie.
 
+Strategická hra Go je považovaná za najstaršiu stolovú hru, ktorá sa nepretržite hrá až do súčasnosti a bola vytvorená v Číne pred viac ako 2500 rokmi. Historické anály Zuo Zhuan (4. storočie pred Kristom), ktoré sa týkajú historickej udalosti z roku 548 pred Kristom, sú najstaršou písomnou zmienkou o hre Go. 
+
+Legendy vystopovali pôvod hry k mýtickému čínskemu cisárovi Yaoovi (2337 - 2258 p.n.l.), o ktorom sa hovorilo, že jeho poradca Shun navrhol hru Go pre jeho neposlušného syna Danzhu, aby naňho získal priaznivý vplyv.[3]
+
+\subsection{Pravidlá strategickej hry Go}
+Niektoré stolové hry sú založené na čistej stratégii, ale mnohé obsahujú prvok náhody a niektoré dokonca čisto založené na náhode, bez prvku zručnosti. Strategická hra Go je jednou z takýchto stolových hier a je zvyčajne známa ako abstraktná strategická stolová hra pre dvoch hráčov, ktorej cieľom je obklopiť väčšie územie ako súper. [3]
+
+Go je strategická hra pre dvoch hráčov, ktorá sa hrá s čiernymi a bielymi kameňmi na doske s 19 x 19 pretínajúcimi sa čiarami, hoci niekedy sa používajú dosky 13 x 13 a 9 x 9. Počnúc čiernou, hráči sa striedajú buď položením jedného kameňa na jednu z prázdnych križovatiek, alebo míňaním(príhrávím). Po umiestnení sa kameň nehýbe; avšak bloky kameňov môžu byť obkľúčené a zajaté protihráčom. Hra končí, keď obaja hráči prihrávajú. 
+
+V turnajovej hre nedochádza k žiadnym remízam, pretože biely hráč získa 5,5 dodatočných bodov (nazývaných komi) ako kompenzáciu za to, že hrá ako druhý.[1]
 \section{Nejaká časť} \label{nejaka}
 
 Z obr.~\ref{f:rozhod} je všetko jasné. 
