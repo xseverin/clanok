@@ -2,7 +2,7 @@
 
 \documentclass[10pt,twoside,slovak,a4paper]{article}
 
-\usepackage[slovak]{babel}
+%\usepackage[slovak]{babel}
 %\usepackage[T1]{fontenc}
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
 \usepackage[utf8]{inputenc}
@@ -33,22 +33,19 @@
 \maketitle
 
 \begin{abstract}
-Go je dosková hra pochádzajúca zo starovekej Číny. S rozvojom techniky sa preniesla aj do počítačov.
-Existuje obrovské množstvo mobilných aplikácií, počítačových programov a stránok, kde je materiál o tejto hre, kde sa môžete hrať s počítačom alebo ľuďmi, sledovať, ako hrajú ostatní, a získavať skúsnosti.
-Účelom článku je vysvetliť, čo táto hra učí, ako ju hrať, aké zručnosti rozvíja, stručne povedať jej niekoľko tisícročí vývoja, aké stránky, programy či aplikácie sú pre túto hru najvhodnejšie.
+Go je dosková hra pochádzajúca zo starovekej Číny, ktorá sa s rozvojom techniky preniesla aj do počítačov. Existuje obrovské množstvo mobilných aplikácií, počítačových programov a stránok venovaných tejto hre, na ktorých sa môžete hrať s počítačom alebo s ľuďmi, prípadne sledovať, ako hrajú ostatní a získavať skúsenosti. Účelom článku je vysvetliť, čo táto hra ľuďom prináša, ako ju hrať, aké zručnosti rozvíja a stručne zhrnúť jej vývoj počas tisícročí. Na záver uvediem, ktoré stránky, programy či aplikácie sú pre túto hru najvhodnejšie.
 \end{abstract}
 
 
 
 \section{Úvod}
-
-Počítačový Go program AlphaGo od DeepMind vyhral zápas proti jednému z najlepších svetových hráčov Lee Sedolovi z Kórey. Víťazstvo prišlo oveľa skôr, než ktokoľvek očakával, a prekvapilo mnohých v oblasti AI. Nolan Bushnell, zakladateľ Atari a sám Go Guru, bol tak ohromený počinom AlphaGo: \enquote{Go je najdôležitejšia hra v mojom živote. Je to jediná hra, ktorá skutočne vyvažuje ľavú a pravú stranu mozgu.  Skutočnosť, že teraz ustúpila počítačovej technológii, je nesmierne dôležitá}. Porážka nad ľudstvom strojom tiež vyvolala obrovský záujem verejnosti o technológiu AI na celom svete, najmä v Číne, Kórei, USA a Spojenom kráľovstve. Pre mnohých ľudí má IT od tohto momentu nový význam: neznamená to len informačné technológie alebo priemyselné technológie, teraz sú to inteligentné technológie a prichádza vek nových IT. \textquote{Myslel som, že AlphaGo je založený na výpočte pravdepodobnosti a že je to iba stroj. Ale keď som videl tento krok, zmenil som názor. AlphaGo je určite kreatívny}, povedal sám odporca tohto počítačového programu, víťaz 18 svetových titulov Go.\cite{webAlphaGo}\cite{7471613}
-
+Počítačový Go program AlphaGo od DeepMind vyhral zápas proti jednému z najlepších svetových hráčov Lee Sedolovi z Kórey. Víťazstvo prišlo oveľa skôr, než ktokoľvek očakával, a prekvapilo mnohých v oblasti umelej inteligencii. Nolan Bushnell, zakladateľ Atari a sám Go Guru, bol tak ohromený počinom AlphaGo: \enquote{Go je najdôležitejšia hra v mojom živote. Je to jediná hra, ktorá skutočne vyvažuje ľavú a pravú stranu mozgu.  Skutočnosť, že teraz ustúpila počítačovej technológii, je nesmierne dôležitá}. Výhra počítača nad človekom tiež vyvolala obrovský záujem verejnosti o technológiu umelej inteligencii na celom svete, najmä v Číne, Kórei, USA a Spojenom kráľovstve. Pre mnohých ľudí má IT od tohto momentu nový význam. Ako povedal sám odporca tohto počítačového programu, víťaz 18-tich svetových titulov Go: \textquote{Myslel som, že AlphaGo je založený na výpočte pravdepodobnosti a že je to iba stroj. Ale keď som videl tento ťah, zmenil som názor. AlphaGo je určite kreatívny}. Neznamená to len informačné technológie alebo priemyselné technológie, teraz sú to inteligentné technológie a prichádza vek nových IT.\cite{webAlphaGo}\cite{7471613}
+  
 Prečo víťazstvo počítača nad človekom v tejto hre tak mnohých prekvapilo?
 
 Myslím si, že dôvodom je to, že sme ľudia, myslíme si o sebe, že sme veľmi kreatívni. Totiž v strategickej hre Go sa tieto vlastnosti prejavujú. Prečo a ako táto hra rozvíja kreativitu a v akej forme je najlepšie ju hrať - to sú hlavné otázky tohto článku.
 
-% Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
+%Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
 %Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
 %Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
 %Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
@@ -66,69 +63,96 @@ Legendy vystopovali pôvod hry k mýtickému čínskemu cisárovi Yaoovi (2337 -
 \subsection{Pravidlá strategickej hry Go}\label{Pravidlá strategickej hry Go}
 Niektoré stolové hry sú založené na čistej stratégii, ale mnohé obsahujú prvok náhody a niektoré dokonca čisto založené na náhode, bez prvku zručnosti. Strategická hra Go je jednou z takýchto stolových hier a je zvyčajne známa ako abstraktná strategická stolová hra pre dvoch hráčov, ktorej cieľom je obklopiť väčšie územie ako súper.\cite{9231758}
 
-Go je strategická hra pre dvoch hráčov, ktorá sa hrá s čiernymi a bielymi kameňmi na doske s 19 x 19 pretínajúcimi sa čiarami, hoci niekedy sa používajú dosky 13 x 13 a 9 x 9. Počnúc čiernou, hráči sa striedajú buď položením jedného kameňa na jednu z prázdnych križovatiek, alebo míňaním(príhrávím). Po umiestnení sa kameň nehýbe; avšak bloky kameňov môžu byť obkľúčené a zajaté protihráčom. Hra končí, keď obaja hráči prihrávajú.\cite{10.1145/792548.611939}
+Go sa hrá s čiernymi a bielymi kameňmi na doske s 19 x 19 pretínajúcimi sa čiarami, hoci niekedy sa používajú dosky 13 x 13 a 9 x 9. Prvý ťah vykonáva hráč z čiernym kameňom a hráči sa striedajú buď položením jedného kameňa na jednu z prázdnych priesečníc, alebo vzdaním sa ťahu. Po umiestnení sa kameň nehýbe, avšak bloky kameňov môžu byť obkľúčené a zajaté protihráčom. Hra končí, keď obaja hráči vzdali ťahu.\cite{10.1145/792548.611939}
 
 V turnajovej hre nedochádza k žiadnym remízam, pretože biely hráč získa 5,5 dodatočných bodov (nazývaných komi) ako kompenzáciu za to, že hrá ako druhý.\cite{10.1145/792548.611939}
 
 \subsection{Analyzá strategickej hry Go}
-Z časti s pravidlami strategickej hry Go(čast ~\ref{Pravidlá strategickej hry Go}) vyplýva, že pravidlá strategickej hry Go je extrémne jednoduché, no jeho zložitosť je neúmerne vysoká. Počet teoreticky možných hier je rádovo $10^{700}$.\cite{10.1145/792548.611939}
+Pravidlá strategickej hry Go(čast ~\ref{Pravidlá strategickej hry Go}) sú veľmi jednoduché, avšak zvládnuť hru samotnú je náročné. Počet teoreticky možných hier je rádovo $10^{700}$.\cite{10.1145/792548.611939}
 
-Súčasťou toho, čo robí strategický hry Go tak strhujúcim a náročným, je súhra medzi taktikou a stratégiou. Na jednej strane hráči bojujú v miestnych bitkách o územie v malých oblastiach hracej plochy. Na druhej strane, usporiadanie kameňov na jednej strane dosky ovplyvňuje pevnosť a užitočnosť kameňov na druhej strane dosky.\cite{7471613}
+Súčasťou toho, čo robí strategický hry Go tak zaujímavou a náročnou, je súhra medzi taktikou a stratégiou. Hráči bojujú v miestnych bitkách o územie v malých oblastiach hracej plochy a súčasné usporiadanie kameňov na jednej strane dosky ovplyvňuje pevnosť a užitočnosť kameňov na druhej strane dosky.\cite{7471613}
 
-\section{ Najvhodnejšie stránky, programy a aplikácie pre strategický hry Go }
+\section{ Najvhodnejšie stránky, programy a aplikácie pre strategickú hru Go }
 \subsection{Stránky pre strategický hry Go}
-Podľa môjho názoru sú najužitočnejšie stránky na učenie sa Strategickej hry Go stránky amerických a britských Go asociácií. \cite{britGo}\cite{usGo}
+Podľa môjho názoru sú pre potreby štúdia strategickej hry Go najvhodnejšie stránky amerických a britských Go asociácií a taktiež aj slovenská stránka asociácií Go je dobra. \cite{britGo}\cite{usGo}\cite{sGo}
 
-Na týchto stránkach môžete nájsť obrovské množstvo dokumentácie o tejto hre, nápadov, ktoré Vám pomôžu zlepšiť vaše zručnosti.
-\subsection{Programy a aplikácie pre strategický hry Go}
-\begin{center}
+Na týchto stránkach môžete nájsť obrovské množstvo dokumentácie o tejto hre a nápadov, ktoré Vám pomôžu zlepšiť vaše zručnosti.\\
 
-\begin{tabular}{|l|l|}
+\begin{tabular}{l|l}
+\multicolumn{2}{c} {\textbf{Softvér na hranie Go na internete}}\\
 Nazov & Popis\\
-\multicolumn{2}{c} K dispozícii na nákup\\
-Crazy Stone & Silný Go hrajúci motory. Dostupné pre PC, iOS a Android.\\
-Many Faces of Go& Ocenený program D. Fotlanda. Igowin, 9x9 freeware demo, je k dispozícii na stiahnutie.\\
-SmartGo &Niekoľko programov vrátane SmartGoKifu, SmartGo Player, SmartGo pre Windows/Mac\\
-
-\multicolumn{2}{c} Grafické používateľské rozhrania (bez nákladov) \\
-
-GoRilla & GoRilla je bezplatný produkt Windows, ktorý načítava, upravuje a ukladá súbory SGF.\\
-\multirow{2}{*}{KaTrain} & Grafické používateľské rozhranie spárované s KataGo,\\& ktoré funguje hneď po vybalení na hranie a analýzu hier s robotom.\\
-Lizzie: & Analytický program, ktorý je užitočným grafickým rozhraním pre LeelaZero, KataGo alebo Pachi.\\
-PANDA-glGo & 3D a 2D Goban, prehliadač a editor hier, klient pre IGS-PandaNet a rozhranie pre GNU Go.\\
-q5Go & Editor Windows SGF, klient IGS a rozhranie GTP, ktoré podporuje LeelaZero a KataGo.\\
-Sabaki & Veľmi pekné grafické používateľské rozhranie pre Windows, Mac a Linux.\\
-
-\multicolumn{2}{c} Roboty (bez nákladov)\\
-    
-GnuGo & Open source go program.\\
-KataGo & Silný robot, ktorý dokáže správne analyzovať hendikepové hry a poskytnúť odhady skóre.\\
-Leela& Leela je silný program na hranie Go, ktorý kombinuje pokroky v programovaní Go a ďalší originálny výskum malého, ľahko použiteľného grafického rozhrania.\\
-LeelaZero& Veľmi silný robot, existuje veľa pekných editorov gtp, ktoré umožňujú hrať a kontrolovať hry s LeelaZero.\\
-Pachi& Pekný bot, ktorý je 2d až 7d a nemusí byť spustený na veľmi dobrom hardvéri.\\
-
-\multicolumn{2}{c}Softvér, ktorý vám pomôže študovať (platené databázy obsahujúce mnoho profesionálnych hier)\\
-BiGo & Databáza 100 000+ profesionálnych hier a 3 000 000 hier. Má tiež programy joseki a fuseki.\\
-GoGoD & Databáza 98 000+ hier. Súčasťou je voliteľný program, ktorý funguje iba v systéme Windows.\\
-go4go & Databáza s viac ako 86 000 hrami a týždennými aktualizáciami profesionálnych hier.\\
-
-\multicolumn{2}{c}Softvér na hranie Go na internete\\
-Cgoban & Klient pre server KGS Go. Obsahuje editor súborov SGF na nahrávanie a prezeranie herných záznamov\\
+\hline
+\multirow{3}{*}{Cgoban} & Klient pre KGS Go. \\&Obsahuje editor súborov SGF\\& na nahrávanie a prezeranie herných záznamov\\
+\hline
 Fox Go Server & Jeden z najpopulárnejších serverov\\
-Pandanet & Klient IGS, ktorý vám umožňuje sledovať a hrať hry online pre mobil alebo Windows/Mac/Linux\\
+\hline
+\multirow{2}{*}{Pandanet} & Klient IGS, ktorý umožňuje sledovať a hrať hry online \\&pre mobil alebo Windows/Mac/Linux\\
+\hline
 Tygem & Ďalší populárny online server\\
+\hline
+\multirow{2}{*}{Interactive Way To Go} & učí pravidlá Go a niečo \\&viacej o stratégii hry interaktívnym spôsobom
 \end{tabular}
-\end{center}	
-\cite{usGo}
-Z obr.~\ref{f:rozhod} je všetko jasné. 
 
-\begin{figure*}[tbh]
-\centering
+\cite{usGo}\cite{sGo}
+\subsection{Programy a aplikácie pre strategický hry Go}
+\begin{tabular}{l|l}
+Nazov & Popis\\
+\multicolumn{2}{c} {\textbf{K dispozícii na nákup}}\\
+\hline
+Crazy Stone & Go softwérové nástroje. Dostupé pre PC, iOS a Android.\\
+\hline
+\multirow{2}{*}{Many Faces of Go} & Ocenený program D. Fotlanda. \\&Igowin, 9x9 freeware demo, je k dispozícii na stiahnutie.\\
+\hline
+\multirow{2}{*}{SmartGo} & Niekoľko programov vrátane SmartGoKifu, \\&SmartGo Player, SmartGo pre Windows/Mac\\
+\hline
+\multicolumn{2}{c} {\textbf{Grafické používateľské rozhrania (bez nákladov)}} \\
+\hline
+\multirow{2}{*}{GoRilla} & produkt Windows, ktorý načítava, \\&upravuje a ukladá súbory SGF.\\
+\hline
+\multirow{3}{*}{KaTrain} & Grafické používateľské rozhranie spárované s KataGo,\\& ktoré je veľmi kreatívne \\&a inšpirujúce pri hraní a analýze hier s robotom.\\
+\hline
+\multirow{2}{*}{Lizzie} & Analytický program, ktorý je užitočným grafickým\\& rozhraním pre LeelaZero, KataGo alebo Pachi.\\
+\hline
+\multirow{2}{*}{PANDA-glGo} & 3D a 2D Goban, prehliadač a editor hier, \\& klient pre IGS-PandaNet a rozhranie pre GNU Go.\\
+\hline
+\multirow{2}{*}{q5Go} & Editor Windows SGF, klient IGS a rozhranie GTP, \\&ktoré podporuje LeelaZero a KataGo.\\
+\hline
+\multirow{2}{*}{Sabaki} & Veľmi pekné grafické používateľské rozhranie\\& pre Windows, Mac a Linux.\\
+\hline
+\multicolumn{2}{c} {\textbf{Roboty (bez nákladov)}}\\
+\hline    
+GnuGo & Open source go program.\\ 
+\hline
+\multirow{2}{*}{KataGo} & dokáže správne analyzovať hry pri znevýhodnení \\& a poskytnúť odhady skóre.\\
+\hline
+\multirow{3}{*}{Leela} & kombinuje pokroky v programovaní Go \\& a ďalší originálny výskum malého, \\&ľahko použiteľného grafického rozhrania.\\
+\hline
+\multirow{2}{*}{LeelaZero}& existuje veľa pekných editorov gtp, \\&ktoré umožňujú hrať a kontrolovať hry s LeelaZero.\\
+\hline
+Pachi& nemusí byť spustený na veľmi dobrom hardvéri.\\
+\hline
+\end{tabular}
+\begin{tabular}{l|l}
+\multicolumn{2}{c} {\textbf{Softvér, ktorý pomôže študovať (platené databázy)}}\\
+\hline
+BiGo & Databáza 100 000+ profesionálnych a 3 000 000 amatérskych  hier.\\
+\hline
+\multirow{2}{*}{GoGoD} & Databáza 98 000+ hier. Súčasťou je voliteľný program, \\&ktorý funguje iba so systémom Windows.\\
+\hline
+\multirow{2}{*}{go4go} & Databáza s viac ako 86 000 hrami\\& a týždennými aktualizáciami profesionálnych hier.\\
+\hline
+
+\end{tabular}
+\cite{usGo}
+%Z obr.~\ref{f:rozhod} je všetko jasné. 
+
+%\begin{figure*}[tbh]
+%\centering
 %\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
-\end{figure*}
+%Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
+%\caption{Rozhodujúci argument.}
+%\label{f:rozhod}
+%\end{figure*}
 
 
 %Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
